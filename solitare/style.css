@@ -1,0 +1,43 @@
+.game-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+  }
+  
+  .pile {
+	width: 150px;
+	height: 200px;
+	border: 1px solid black;
+	margin: 10px;
+	position: relative;
+  }
+  
+  .stock-pile {
+	background-color: white;
+  }
+  
+  .waste-pile {
+	background-color: lightgray;
+  }
+  
+  .foundation-pile {
+	background-color: lightblue;
+  }
+  
+  .tableau-pile {
+	background-color: lightgreen;
+  }
+  
+  .card {
+	width: 100px;
+	height: 150px;
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+  }
+  
