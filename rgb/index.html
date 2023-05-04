@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RGB generátor</title>
+	<style>
+		.index {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.text{
+			font-size: 3vw;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="index">
+		<div class="text"></div>
+	</div>
+</body>
+
+</html>
+<script>
+	const index = document.getElementsByClassName("index")[0];
+	const text = document.getElementsByClassName("text")[0];
+	function componentToHex(c) {
+		var hex = c.toString(16);
+		return hex.length == 1 ? "0" + hex : hex;
+	}
+	/*function rgbToHex(r, g, b) {
+		return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+	}*/
+	function rgbToHex(r, g, b) {
+		return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
+	}
+	function gen() {
+		let randR = (Math.random() * 256);
+		let randG = (Math.random() * 256);
+		let randB = (Math.random() * 256);
+		let color = `rgb(${randR}, ${randG}, ${randB})`;
+
+		text.innerHTML = rgbToHex(randR, randG, randB).toUpperCase();
+
+		index.style.backgroundColor = color;
+	}
+	gen();
+</script>
